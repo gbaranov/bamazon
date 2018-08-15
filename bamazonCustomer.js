@@ -64,10 +64,9 @@ function showList(items) {
 function updateStock(selected) {
     connection.query("UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?",[selected.quantity, selected.item.id], function(err, result) {
         if (err) throw err;
-        console.log('Stock updated.')
         connection.end();
     });
-}
+};
 
 // function getData() {
 //     connection.query('SELECT * FROM products', function(err, result) {
